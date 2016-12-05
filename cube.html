@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<style type="text/css">
+			body{
+				background-color:gray;
+				margin:0;
+				padding:0;
+			}
+			.heading{
+				margin:0 auto;
+				width:100%;
+				position:relative;
+				top:300px;
+				text-align:center;
+				font-size:50px;
+				color:white;
+			}
+			.container{
+				width:300px;
+				height:300px;
+				position:relative;
+				top:120px;
+				margin:0 auto;
+				
+				perspective:500px;
+			}
+			.cube1{
+				width:300px;
+				height:300px;
+				position:absolute;
+				
+				transform-style:preserve-3d;
+				animation: animation1 10s linear  infinite;
+			}
+			.cube2{
+				width:300px;
+				height:300px;
+				position:absolute;
+				
+				transform-style:preserve-3d;
+				animation: animation1 4s linear  infinite reverse;
+			}
+			@keyframes animation1{
+				from{
+					transform:rotateY(0deg);
+				}to{
+					transform:rotateY(360deg);
+				}
+			}
+			#face1, #face2, #face3, #face4, #face5, #face6{
+				position:absolute;
+				line-height:250px;
+				font-size:30px;
+				background-color: rgba(155,155,155,0.4);
+				width:300px;
+				height:300px;
+				border:2px solid white;
+			}
+			#face11, #face22, #face33, #face44, #face55, #face66{
+				position:absolute;
+				line-height:175px;
+				font-size:30px;
+				background-color:green;
+				opacity:.3;
+				width:200px;
+				height:200px;
+				left:50px;
+				top:50px;
+				border:2px solid white;
+			}
+			#face1{
+				transform:rotateY(-90deg) translateZ(-150px) rotateY(-180deg);
+			}
+			#face2{
+				transform: translateZ(150px) ;
+			}
+			#face3{
+				transform:rotateY(90deg) translateZ(-150px) rotateY(180deg);
+			}
+			#face4{
+				transform: translateZ(-150px) rotateY(180deg);
+			}
+			#face5{
+				transform: rotateX(90deg) translateZ(-150px);
+			}
+			#face6{
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			
+			#face11{
+				transform:rotateY(-90deg) translateZ(-100px);
+			}
+			#face22{
+				transform: translateZ(100px) ;
+			}
+			#face33{
+				transform:rotateY(90deg) translateZ(-100px);
+			}
+			#face44{
+				transform: translateZ(-100px);
+			}
+			#face55{
+				transform: rotateX(90deg) translateZ(-100px);
+			}
+			#face66{
+				transform: rotateX(90deg) translateZ(100px);
+			}
+		</style>
+	</head>
+    <body>
+		<div class="container">
+			<div class="cube1">
+				<span id="face1" align="center"></span>
+				<span id="face2" align="center"></span>
+				<span id="face3" align="center"></span>
+				<span id="face4" align="center"></span>
+				<span id="face5" align="center"></span>
+				<span id="face6" align="center"></span>
+			</div>
+			<div class="cube2">
+				<span id="face11" align="center"></span>
+				<span id="face22" align="center"></span>
+				<span id="face33" align="center"></span>
+				<span id="face44" align="center"></span>
+				<span id="face55" align="center"></span>
+				<span id="face66" align="center"></span>
+			</div>
+		</div>
+		<div class="heading">rotating cube</div>
+    </body>
+</html>
